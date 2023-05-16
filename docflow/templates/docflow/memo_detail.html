@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Memo Detail</h1>
+  <p><strong>Reference Number:</strong> {{ memo.reference_number }}</p>
+  <p><strong>Sender:</strong> {{ memo.sender.get_full_name }}</p>
+  <p><strong>Recipient:</strong> {{ memo.recipient.get_full_name }}</p>
+  <p><strong>CC:</strong> {{ memo.cc.all|join:", " }}</p>
+  <p><strong>Project:</strong> {{ memo.project }}</p>
+  <p><strong>Budget Line:</strong> {{ memo.budget_line }}</p>
+  <p><strong>Purpose:</strong> {{ memo.purpose }}</p>
+  <p><strong>Attachment:</strong> {% if memo.attachment %}<a href="{{ memo.attachment.url }}">Download Attachment</a>{% else %}N/A{% endif %}</p>
+{% endblock %}

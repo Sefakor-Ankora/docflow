@@ -1,0 +1,11 @@
+{% for memo in memos %}
+    <p>{{ memo.reference_number }}</p>
+    <!-- Display other fields of the memo as needed -->
+    <p>{{ memo.sender}}</p>
+    <p>{{ memo.recipient }}</p>
+    <p>{{ memo.is_approved }}</p>
+    <p>{{ memo.is_rejected }}</p>
+    <p>{{ memo.project }}</p>
+    <p>{{ memo.bugjet_line }}</p>
+    <p>{{ memo.created_at }}</p>
+{% endfor %}

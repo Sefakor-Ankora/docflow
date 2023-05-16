@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block menu_links %}
+  <!-- Empty block by default -->
+{% endblock %}
+
+
+{% block content %}
+    <h2>Create Leave Request</h2>
+    <div class="container pl-4" ></div>
+    <form method="POST" action="{% url 'leave_request' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="staff_id">Staff ID:</label>
+                    <input type="text" class="form-control" id="staff_id" name="staff_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Position:</label>
+                    <input type="text" class="form-control" id="position" name="position" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input type="text" class="form-control" id="department" name="department" required>
+                </div>
+                <div class="form-group">
+                    <label for="leave_types">Leave Type:</label>
+                    <select class="form-control" id="leave_types" name="leave_types" required>
+                        {% for choice in leave_types %}
+                            <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="annual_leave_entitled">Annual Leave Entitled:</label>
+                    <input type="number" class="form-control" id="annual_leave_entitled" name="annual_leave_entitled" required>
+                </div>
+                <div class="form-group">
+                    <label for="leave_days_taken">Leave Days taken:</label>
+                    <input type="number" class="form-control" id="leave_days_taken" name="leave_days_taken" required>
+                </div>
+                <div class="form-group">
+                    <label for="leave_days_requested">Leave Days Requested:</label>
+                    <input type="number" class="form-control" id="leave_days_requested" name="leave_days_requested" required>
+                </div>
+                <div class="form-group">
+                    <label for="handing_over_to">Handing Over To:</label>
+                    <input type="text" class="form-control" id="handing_over_to" name="handing_over_to">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="proposed_leave_start_date">Proposed Leave Start Date:</label>
+                    <input type="date" class="form-control" id="proposed_leave_start_date" name="proposed_leave_start_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="proposed_leave_end_date">Proposed Leave End Date:</label>
+                    <input type="date" class="form-control" id="proposed_leave_end_date" name="proposed_leave_end_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="handing_over_notes_done">Handing Over Notes Done:</label>
+                    <input type="checkbox" class="form-control" id="handing_over_notes_done" name="handing_over_notes_done">
+                </div>
+                <div class="form-group">
+                    <label for="resumption_date">Resumption Date:</label>
+                    <input type="date" class="form-control" id="resumption_date" name="resumption_date" required>
+            </div>
+            
+            </div>
+            <button type="submit"class="btn btn-primary">Create Request</button>
+            </form>
+            {% endblock %}
+            

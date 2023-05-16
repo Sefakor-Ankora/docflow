@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h2>welcome to your dashboard, {{ user.username }}</h2>
+  <ul>
+    <li><a href="{% url 'create_memo' %}">Create Memo</a></li>
+    <li><a href="{% url 'leave_request' %}">Leave Request</a></li>
+  </ul>
+  <div class="container">
+    <div class="left-section">
+      <!-- User Activities -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Your Activities</h4>
+        </div>
+        <div class="card-body">
+          {% if user_activities %}
+            <ul>
+              {% for activity in user_activities %}
+                <li>{{ activity }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No activities found.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <!-- Memos Created -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Memos Created</h4>
+        </div>
+        <div class="card-body">
+          {% if memos_created %}
+            <ul>
+              {% for memo in memos_created %}
+                <li>{{ memo.title }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No memos created.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <!-- Leave Requests -->
+      <div class="card">
+        <div class="card-header">
+          <h4>Leave Requests</h4>
+        </div>
+        <div class="card-body">
+          {% if leave_requests %}
+            <ul>
+              {% for request in leave_requests %}
+                <li>{{ request.title }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No leave requests.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+{% endblock %}

@@ -1,0 +1,177 @@
+/* Styles for the Create Memo page */
+
+/* Form container */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  /* Form labels */
+  .form-label {
+    font-weight: bold;
+  }
+  
+  /* Form input fields */
+  .form-input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Form select fields */
+  .form-select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Form submit button */
+  .form-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-submit:hover {
+    background-color: #45a049;
+  }
+  
+  /* General styles */
+  
+  /* Heading styles */
+  h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Error message */
+  .error-message {
+    color: #ff0000;
+  }
+  
+  /* Success message */
+  .success-message {
+    color: #008000;
+  }
+  
+  .container {
+    display: flex;
+}
+
+.left-section,
+.middle-section,
+.right-section {
+    width: 50%;
+    
+}
+
+
+/* Add custom styles for the dashboard */
+
+/* Center the page content */
+.container-fluid {
+  margin-top: 50px;
+}
+
+/* Style the header */
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the navigation menu */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Style the main content */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+/* Style the sidebar menu */
+.sidebar {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 5px;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Align the sidebar to the right */
+.sidebar {
+  margin-left: auto;
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 767px) {
+  .col-md-3.sidebar {
+    margin-left: 0;
+  }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin-left: 10px;
+}
+
+.nav-links li:first-child {
+  margin-left: auto;
+}

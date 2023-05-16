@@ -1,0 +1,17 @@
+
+
+
+{% extends 'base.html' %}
+
+<img src="{{ company_logo }}" alt="Company Logo">
+
+{% block content %}
+  <h2>Welcome to WACREN</h2>
+  <p>This is the home page of our office document processing workflow.</p>
+  <p>Please choose one of the following options:</p>
+  <ul>
+    <li><a href="{% url 'register' %}">Register</a></li>
+    <li><a href="{% url 'login' %}">Login</a></li>
+  </ul>
+  <!--{% include 'login.html' %}-->
+{% endblock %}

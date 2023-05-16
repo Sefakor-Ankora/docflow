@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block menu_links %}
+  <!-- Empty block by default -->
+{% endblock %}
+
+
+
+{% block content %}
+  <h1>Create Memo</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- Add the following field for the sender -->
+    <div class="form-group">
+      <label for="sender">From:</label>
+   <!-- <input type="text" class="form-control" id="sender" name="sender" value="{{ request.user.get_full_name }}" readonly>-->
+    <input type="text" class="form-control" id="sender" name="sender" value="{{ request.user.get_username }}" readonly>
+  </div>
+    </div>
+    <div class="form-group">
+      <label for="recipient">To:</label>
+      <input type="text" class="form-control" id="recipient" name="recipient" required>
+    </div>
+    <div class="form-group">
+      <label for="cc">CC:</label>
+      <input type="text" class="form-control" id="cc" name="cc" required>
+    </div>
+    <div class="form-group">
+      <label for="project">Project:</label>
+      <input type="text" class="form-control" id="project" name="project" required>
+    </div>
+    <div class="form-group">
+      <label for="budget_line">Budget Line:</label>
+      <input type="text" class="form-control" id="budget_line" name="budget_line" required>
+    </div>
+    <div class="form-group">
+      <label for="purpose">Purpose:</label>
+      <textarea class="form-control" id="purpose" name="purpose" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="attachment">Attachment:</label>
+      <input type="file" class="form-control" id="attachment" name="attachment">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

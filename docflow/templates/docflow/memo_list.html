@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Memo List</h1>
+  {% if memos %}
+    <ul>
+      {% for memo in memos %}
+        <li>
+          <a href="{% url 'memo_detail' memo.id %}">{{ memo.reference_number }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No memos available.</p>
+  {% endif %}
+{% endblock %}
